@@ -315,7 +315,15 @@ container.append(compareFalseHTML);
       pixelsAbove[i] = pixelsAbove[i-1] + $('div#container' + (i-1)).height() + chapterContainerMargin;
     }
     pixelsAbove.push(Number.MAX_VALUE);
-
+// Vorher-Nachher-Slider
+$('#contents').on('input', '.image-compare-slider', function()
+{
+var position = $(this).val();
+$(this)
+.prev('.image-compare')
+.find('.image-compare-after')
+.css('width', position + '%');
+});
     $('div#contents').scroll(function() {
       var currentPosition = $(this).scrollTop();
 
