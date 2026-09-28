@@ -261,7 +261,39 @@ $(window).on('load', function() {
         .append(media ? mediaContainer : '')
         .append(media ? source : '')
         .append('<p class="description">' + c['Description'] + '</p>');
-
+// Vorher-Nachher-Vergleich in Kapitel 10
+if (i == 10)
+{
+var compareHTML =
+'<div class="image-compare">' +
+'<img src="media/Post_RGB.png" alt="Nach dem Hochwasser">' +
+'<div class="image-compare-after">' +
+'<img src="media/Pre_RGB.png" alt="Vor dem Hochwasser">' +
+'</div>' +
+'</div>' +
+'<input class="image-compare-slider" type="range" min="0" max="100" 
+value="50">' +
+'<p class="compare-caption">Abb. 7: RGB-Aufnahmen vor und nach dem 
+Hochwasser.</p>';
+container.append(compareHTML);
+}
+// False-Color Vorher-Nachher-Vergleich in Kapitel 11
+if (i == 11) {
+var compareFalseHTML =
+'<div class="image-compare">' +
+'<img src="media/Post_False.png" alt="Nach dem Hochwasser - False 
+Color">' +
+'<div class="image-compare-after">' +
+'<img src="media/Pre_False.png" alt="Vor dem Hochwasser - False Color">' 
++
+'</div>' +
+'</div>' +
+'<input class="image-compare-slider" type="range" min="0" max="100" 
+value="50">' +
+'<p class="compare-caption">Abb. 8: Falschfarbenaufnahmen vor und nach 
+dem Hochwasser.</p>';
+container.append(compareFalseHTML);
+}
       $('#contents').append(container);
 
     }
